@@ -1,11 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D1C1F2"
-    tools:context=".MainActivity5">
+    android:padding="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoRelax"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_relax_logo"
+            android:contentDescription="Logo relaxation" />
+
+        <!-- Titre -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stratégie de détente et récupération"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Question 1 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quelle technique utilises-tu pour te détendre ?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/cbMeditation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Méditation / yoga / respiration" />
+
+        <CheckBox
+            android:id="@+id/cbMusique"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Écouter de la musique ou faire du sport" />
+
+        <CheckBox
+            android:id="@+id/cbChocolat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manger du chocolat ou râler 🍫" />
+
+        <CheckBox
+            android:id="@+id/cbRien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rien, je continue à stresser 😅"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Question 2 -->
+        <TextView
+            android:id="@+id/tvSeekbarQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sur une échelle de 0 à 10, à quel point arrives-tu à te détendre ?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- SeekBar -->
+        <SeekBar
+            android:id="@+id/seekRelax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10" />
+
+        <!-- Labels 0 / 5 / 10 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="0"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="5"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="10"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Valeur dynamique -->
+        <TextView
+            android:id="@+id/tvSeekValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valeur : 0"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Question 3 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quelle ambiance t’aide le plus à te détendre ?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- ChipGroup bien visible -->
+
+        <!-- Question 4 -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chipGroupAmbiance"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBain"
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="🛁 Bain Chaud"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMusique"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="🎵 Musique douce"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipNature"
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="🌿 Nature"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSilence"
+                android:layout_width="147dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="8dp"
+                android:text="🤫 Silence total"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ton sommeil quand tu es stressé·e, c’est plutôt..."
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rgSommeil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbSommeil1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Je dors bien, rien ne m’empêche de dormir 😴" />
+
+            <RadioButton
+                android:id="@+id/rbSommeil2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Je mets un peu de temps à m’endormir" />
+
+            <RadioButton
+                android:id="@+id/rbSommeil3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Je me réveille souvent la nuit" />
+
+            <RadioButton
+                android:id="@+id/rbSommeil4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nuit blanche garantie 😬" />
+        </RadioGroup>
+
+        <!-- Bouton suivant -->
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Page suivante ➜"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#81C784"
+            android:layout_marginTop="24dp"
+            android:padding="10dp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+</ScrollView>
