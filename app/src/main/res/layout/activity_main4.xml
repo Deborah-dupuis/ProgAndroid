@@ -25,12 +25,12 @@
             android:id="@+id/tvTitle4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Expression & Régulation émotionnelle"
-            android:textColor="#5C1850"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             android:layout_marginBottom="20dp"
+            android:text="Expression et Régulation émotionnelle"
+            android:textColor="#5C1850"
+            android:textSize="20sp"
+            android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <TextView
