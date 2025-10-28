@@ -45,26 +45,30 @@
             android:id="@+id/cbMeditation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tag="0"
             android:text="Méditation / yoga / respiration" />
 
         <CheckBox
             android:id="@+id/cbMusique"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tag="1"
             android:text="Écouter de la musique ou faire du sport" />
 
         <CheckBox
             android:id="@+id/cbChocolat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tag="2"
             android:text="Manger du chocolat ou râler 🍫" />
 
         <CheckBox
             android:id="@+id/cbRien"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rien, je continue à stresser 😅"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:tag="3"
+            android:text="Rien, je continue à stresser 😅" />
 
         <!-- Question 2 -->
         <TextView
@@ -198,24 +202,28 @@
                 android:id="@+id/rbSommeil1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="0"
                 android:text="Je dors bien, rien ne m’empêche de dormir 😴" />
 
             <RadioButton
                 android:id="@+id/rbSommeil2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="1"
                 android:text="Je mets un peu de temps à m’endormir" />
 
             <RadioButton
                 android:id="@+id/rbSommeil3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="2"
                 android:text="Je me réveille souvent la nuit" />
 
             <RadioButton
                 android:id="@+id/rbSommeil4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="3"
                 android:text="Nuit blanche garantie 😬" />
         </RadioGroup>
 

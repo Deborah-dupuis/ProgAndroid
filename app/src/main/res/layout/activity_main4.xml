@@ -54,24 +54,28 @@
                 android:id="@+id/rbCritique1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="0"
                 android:text="Écoutes et réponds calmement" />
 
             <RadioButton
                 android:id="@+id/rbCritique2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="1"
                 android:text="Es un peu agacé·e mais ça passe" />
 
             <RadioButton
                 android:id="@+id/rbCritique3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="2"
                 android:text="Exploses un peu" />
 
             <RadioButton
                 android:id="@+id/rbCritique4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="3"
                 android:text="Exploses complètement et râles longtemps" />
         </RadioGroup>
 
@@ -94,24 +98,28 @@
                 android:id="@+id/rbExpression1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="0"
                 android:text="Oui, très facilement" />
 
             <RadioButton
                 android:id="@+id/rbExpression2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="1"
                 android:text="Oui, mais pas systématiquement" />
 
             <RadioButton
                 android:id="@+id/rbExpression3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="2"
                 android:text="Rarement, j’ai du mal à le faire" />
 
             <RadioButton
                 android:id="@+id/rbExpression4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="3"
                 android:text="Non, je garde tout pour moi" />
         </RadioGroup>
 
@@ -134,24 +142,28 @@
                 android:id="@+id/rbCava1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="0"
                 android:text="Réponds honnêtement, même si ça ne va pas" />
 
             <RadioButton
                 android:id="@+id/rbCava2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="1"
                 android:text="Dis “ça va” pour ne pas déranger, mais tu bouillonnes un peu" />
 
             <RadioButton
                 android:id="@+id/rbCava3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="2"
                 android:text="Fais semblant que tout va bien alors que non" />
 
             <RadioButton
                 android:id="@+id/rbCava4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="3"
                 android:text="Lances un grand monologue dramatique" />
         </RadioGroup>
 
@@ -174,24 +186,28 @@
                 android:id="@+id/rbEmotion1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="0"
                 android:text="Prends un moment pour respirer et comprendre ce que tu ressens" />
 
             <RadioButton
                 android:id="@+id/rbEmotion2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="1"
                 android:text="Essaies de passer à autre chose sans trop y penser" />
 
             <RadioButton
                 android:id="@+id/rbEmotion3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="2"
                 android:text="Gardes tout pour toi jusqu’à ce que ça ressorte plus tard" />
 
             <RadioButton
                 android:id="@+id/rbEmotion4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:tag="3"
                 android:text="Exploses directement, sans filtre" />
         </RadioGroup>
 
