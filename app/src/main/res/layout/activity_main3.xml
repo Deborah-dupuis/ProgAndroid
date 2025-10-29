@@ -1,10 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity3">
+    android:background="#B3EBF2"
+    android:padding="16dp"
+    tools:context=".MainActivity4">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImprevu"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/logo_pierre"
+            android:contentDescription="Logo pierre" />
+
+        <!-- Titre -->
+        <TextView
+            android:id="@+id/tvTitle4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Réaction aux imprévus et situations difficiles"
+            android:textColor="#005A6A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
+            android:gravity="center" />
+
+        <!-- Question 1 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quand un imprévu survient, ta première réaction est :"
+            android:textColor="#37474F"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rgImprevu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbCalme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Je reste calme et trouve une solution"
+                android:tag="0" />
+
+            <RadioButton
+                android:id="@+id/rbPaniqueUnPeu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Je panique un peu mais je m’en sors"
+                android:tag="1" />
+
+            <RadioButton
+                android:id="@+id/rbPerdsMoyens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Je perds mes moyens"
+                android:tag="2" />
+
+            <RadioButton
+                android:id="@+id/rbDrame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Je fais un drame complet"
+                android:tag="3" />
+        </RadioGroup>
+
+        <!-- Question 2 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Si ton planning est chamboulé, tu :"
+            android:textColor="#37474F"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Réponses à la verticale -->
+        <RadioGroup
+            android:id="@+id/rgPlanning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbPlanning1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="J’ajuste mes priorités tranquillement"
+                android:tag="0" />
+
+            <RadioButton
+                android:id="@+id/rbPlanning2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Je stresse un peu mais je continue"
+                android:tag="1" />
+
+            <RadioButton
+                android:id="@+id/rbPlanning3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Je panique et je procrastine"
+                android:tag="2" />
+
+            <RadioButton
+                android:id="@+id/rbPlanning4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="J’abandonne tout"
+                android:tag="3" />
+        </RadioGroup>
+
+        <!-- Question 3 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quand tu dois parler en public ou rendre un projet important :"
+            android:textColor="#37474F"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp" />
+
+        <SeekBar
+            android:id="@+id/seekStressProjet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="space_between">
+
+            <TextView android:text="Calme" />
+            <TextView android:text="Trac" />
+            <TextView android:text="Panique légère" />
+            <TextView android:text="Panique totale" />
+        </LinearLayout>
+
+        <!-- Question 4 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dans les situations tendues, arrives-tu à garder ton sang-froid ?"
+            android:textColor="#37474F"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Spinner à la place des étoiles -->
+        <Spinner
+            android:id="@+id/spinnerSangFroid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/sang_froid_options"
+            android:spinnerMode="dropdown" />
+
+        <!-- Bouton suivant -->
+        <Button
+            android:id="@+id/btnSuivant4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Suivant"
+            android:textAllCaps="false"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="#A5D6A7"
+            android:textColor="#ffffff"
+            android:elevation="3dp" />
+
+    </LinearLayout>
+</ScrollView>
