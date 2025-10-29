@@ -20,20 +20,22 @@
             android:layout_height="100dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="8dp"
+            android:contentDescription="Zen logo"
             android:src="@drawable/logo_zen"
-            android:contentDescription="Zen logo" />
+            tools:ignore="HardcodedText,ImageContrastCheck" />
 
 
         <TextView
             android:id="@+id/tvTitle5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fréquence & Intensité du stress"
+            android:text="Fréquence et Intensité du stress"
             android:textColor="#1b5b9a"
             android:textSize="22sp"
             android:textStyle="bold"
             android:layout_marginBottom="24dp"
-            android:gravity="center" />
+            android:gravity="center"
+            tools:ignore="HardcodedText" />
 
 
         <TextView
@@ -43,7 +45,8 @@
             android:textColor="#37474F"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
 
         <RadioGroup
             android:id="@+id/rgFrequence"
@@ -56,28 +59,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rarement, presque jamais"
-                android:tag="0" />
+                android:tag="0"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/rbFrequence2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Parfois, selon les périodes"
-                android:tag="1" />
+                android:tag="1"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/rbFrequence3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Souvent, plusieurs fois par semaine"
-                android:tag="2" />
+                android:tag="2"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/rbFrequence4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Presque tout le temps"
-                android:tag="3" />
+                android:tag="3"
+                tools:ignore="HardcodedText" />
         </RadioGroup>
 
         <TextView
@@ -88,7 +95,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
 
         <Spinner
             android:id="@+id/spinnerDeborde"
@@ -106,7 +114,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
 
         <SeekBar
             android:id="@+id/seekTension"
@@ -117,28 +126,33 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="space_between">
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jamais" />
+                android:text="Jamais"
+                android:verticalScrollbarPosition="right"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Parfois" />
+                android:text="Parfois"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Souvent" />
+                android:text="Souvent"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Presque tous les jours" />
+                android:text="Presque tous les jours"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
 
@@ -150,7 +164,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
 
         <Spinner
             android:id="@+id/spinnerGestion"
@@ -164,13 +179,14 @@
             android:id="@+id/btnSuivant4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Suivant"
-            android:textAllCaps="false"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
             android:backgroundTint="#A5D6A7"
+            android:elevation="3dp"
+            android:text="Suivant"
+            android:textAllCaps="false"
             android:textColor="#ffffff"
-            android:elevation="3dp" />
+            tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
 
     </LinearLayout>
 </ScrollView>

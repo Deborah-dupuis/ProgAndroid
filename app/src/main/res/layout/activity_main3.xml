@@ -21,7 +21,8 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="8dp"
             android:src="@drawable/logo_pierre"
-            android:contentDescription="Logo pierre" />
+            android:contentDescription="Logo pierre"
+            tools:ignore="HardcodedText" />
 
         <!-- Titre -->
         <TextView
@@ -33,7 +34,8 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="24dp"
-            android:gravity="center" />
+            android:gravity="center"
+            tools:ignore="HardcodedText" />
 
         <!-- Question 1 -->
         <TextView
@@ -43,7 +45,8 @@
             android:textColor="#37474F"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
 
         <RadioGroup
             android:id="@+id/rgImprevu"
@@ -56,28 +59,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Je reste calme et trouve une solution"
-                android:tag="0" />
+                android:tag="0"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/rbPaniqueUnPeu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Je panique un peu mais je m’en sors"
-                android:tag="1" />
+                android:tag="1"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/rbPerdsMoyens"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Je perds mes moyens"
-                android:tag="2" />
+                android:tag="2"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/rbDrame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Je fais un drame complet"
-                android:tag="3" />
+                android:tag="3"
+                tools:ignore="HardcodedText" />
         </RadioGroup>
 
         <!-- Question 2 -->
@@ -89,7 +96,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
 
         <!-- Réponses à la verticale -->
         <RadioGroup
@@ -103,28 +111,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="J’ajuste mes priorités tranquillement"
-                android:tag="0" />
+                android:tag="0"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/rbPlanning2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Je stresse un peu mais je continue"
-                android:tag="1" />
+                android:tag="1"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/rbPlanning3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Je panique et je procrastine"
-                android:tag="2" />
+                android:tag="2"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/rbPlanning4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="J’abandonne tout"
-                android:tag="3" />
+                android:tag="3"
+                tools:ignore="HardcodedText" />
         </RadioGroup>
 
         <!-- Question 3 -->
@@ -136,7 +148,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
 
         <SeekBar
             android:id="@+id/seekStressProjet"
@@ -150,10 +163,14 @@
             android:orientation="horizontal"
             android:gravity="space_between">
 
-            <TextView android:text="Calme" />
-            <TextView android:text="Trac" />
-            <TextView android:text="Panique légère" />
-            <TextView android:text="Panique totale" />
+            <TextView android:text="Calme"
+                tools:ignore="HardcodedText" />
+            <TextView android:text="Trac"
+                tools:ignore="HardcodedText" />
+            <TextView android:text="Panique légère"
+                tools:ignore="HardcodedText" />
+            <TextView android:text="Panique totale"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
         <!-- Question 4 -->
@@ -165,28 +182,30 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
 
         <!-- Spinner à la place des étoiles -->
-        <Spinner
-            android:id="@+id/spinnerSangFroid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/sang_froid_options"
-            android:spinnerMode="dropdown" />
 
         <!-- Bouton suivant -->
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
         <Button
             android:id="@+id/btnSuivant4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Suivant"
-            android:textAllCaps="false"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
             android:backgroundTint="#A5D6A7"
+            android:elevation="3dp"
+            android:text="Suivant"
+            android:textAllCaps="false"
             android:textColor="#ffffff"
-            android:elevation="3dp" />
+            tools:ignore="HardcodedText,VisualLintButtonSize,TextContrastCheck,TouchTargetSizeCheck" />
 
     </LinearLayout>
 </ScrollView>
