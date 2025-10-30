@@ -2,69 +2,81 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity4 extends AppCompatActivity {
 
-    // Déclaration des groupes de réponses
-    private RadioGroup rgCritique, rgExpression, rgCava, rgEmotionForte;
-    private Button btnSuivant4;
+    private int scorePage4 = 0; // Score local de cette activité
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4); // ton fichier XML
+        setContentView(R.layout.activity_main4); // ton XML activité 4
 
-        // Récupération des éléments du layout
-        rgCritique = findViewById(R.id.rgCritique);
-        rgExpression = findViewById(R.id.rgExpression);
-        rgCava = findViewById(R.id.rgCava);
-        rgEmotionForte = findViewById(R.id.rgEmotionForte);
-        btnSuivant4 = findViewById(R.id.btnSuivant4);
+        // Récupération des données depuis activité 3
+        Intent intent = getIntent();
+        int totalScore = intent.getIntExtra("score", 0);
+        String nom = intent.getStringExtra("nom");
+        String prenom = intent.getStringExtra("prenom");
+        int age = intent.getIntExtra("age", 0);
+        String genre = intent.getStringExtra("genre");
+        boolean estStresse = intent.getBooleanExtra("stresse", false);
 
-        // Clique sur le bouton "Suivant"
-        btnSuivant4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int score4 = calculerScore(); // calcul du score de cette page
+        // Récupération des vues XML
+        RadioGroup rgCritique = findViewById(R.id.rgCritique);
+        RadioGroup rgExpression = findViewById(R.id.rgExpression);
+        RadioGroup rgCava = findViewById(R.id.rgCava);
+        RadioGroup rgEmotionForte = findViewById(R.id.rgEmotionForte);
+        Button btnSuivant = findViewById(R.id.btnSuivant4);
 
-                // On passe le score à l'activité suivante (MainActivity5)
-                Intent intent = new Intent(MainActivity4.this, MainActivity5.class);
-                intent.putExtra("scoreActuel", score4);
-                startActivity(intent);
+        // Gestion du clic sur le bouton "Suivant"
+        btnSuivant.setOnClickListener(v -> {
+
+            // Vérifier que toutes les questions ont une réponse
+            if (rgCritique.getCheckedRadioButtonId() == -1 ||
+                    rgExpression.getCheckedRadioButtonId() == -1 ||
+                    rgCava.getCheckedRadioButtonId() == -1 ||
+                    rgEmotionForte.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "Merci de répondre à toutes les questions 😊", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            // Calcul du score local
+            scorePage4 = 0;
+            scorePage4 += getScoreFromRadioGroup(rgCritique);
+            scorePage4 += getScoreFromRadioGroup(rgExpression);
+            scorePage4 += getScoreFromRadioGroup(rgCava);
+            scorePage4 += getScoreFromRadioGroup(rgEmotionForte);
+
+            // Score total cumulé
+            int nouveauTotal = totalScore + scorePage4;
+
+            // Envoi des infos vers l’activité 5
+            Intent nextIntent = new Intent(MainActivity4.this, MainActivity5.class);
+            nextIntent.putExtra("score", nouveauTotal);
+            nextIntent.putExtra("nom", nom);
+            nextIntent.putExtra("prenom", prenom);
+            nextIntent.putExtra("age", age);
+            nextIntent.putExtra("genre", genre);
+            nextIntent.putExtra("stresse", estStresse);
+
+            startActivity(nextIntent);
         });
     }
 
-    /**
-     * Calcule le score total pour cette activité
-     */
-    private int calculerScore() {
-        return getValeur(rgCritique)
-                + getValeur(rgExpression)
-                + getValeur(rgCava)
-                + getValeur(rgEmotionForte);
-    }
-
-    /**
-     * Récupère la valeur numérique (tag) du RadioButton sélectionné
-     */
-    private int getValeur(RadioGroup rg) {
+    // Méthode utilitaire pour récupérer la valeur d’un RadioGroup
+    private int getScoreFromRadioGroup(RadioGroup rg) {
         int selectedId = rg.getCheckedRadioButtonId();
-        if (selectedId == -1) return 0; // aucune réponse sélectionnée
-
-        RadioButton rb = findViewById(selectedId);
-        Object tag = rb.getTag();
-        if (tag != null) {
+        RadioButton selectedButton = findViewById(selectedId);
+        if (selectedButton != null && selectedButton.getTag() != null) {
             try {
-                return Integer.parseInt(tag.toString());
+                return Integer.parseInt(selectedButton.getTag().toString());
             } catch (NumberFormatException e) {
-                e.printStackTrace();
+                return 0;
             }
         }
         return 0;
