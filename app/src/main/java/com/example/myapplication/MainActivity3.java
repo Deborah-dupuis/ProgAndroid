@@ -18,7 +18,7 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3); // ton XML activité 3
+        setContentView(R.layout.activity_main3);
 
         // Récupération des données depuis activité 2
         Intent intent = getIntent();

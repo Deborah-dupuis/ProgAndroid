@@ -27,14 +27,14 @@ public class MainActivity2 extends AppCompatActivity {
         //  Récupérer score et infos de l'activité 1
         scoreAct1 = getIntent().getIntExtra("score", 0);
 
-        // 🔹 Ajouter les choix au Spinner "Débordé"
+        // Ajouter les choix au Spinner "Débordé"
         String[] choixDeborde = {"Jamais", "Parfois", "Souvent", "Presque tous les jours"};
         ArrayAdapter<String> adapterDeborde = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, choixDeborde);
         adapterDeborde.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDeborde.setAdapter(adapterDeborde);
 
-        // 🔹 Ajouter les choix au Spinner "Gestion du stress"
+        // Ajouter les choix au Spinner "Gestion du stress"
         String[] choixGestion = {
                 "Excellente, je suis zen",
                 "Correcte, je m’en sors globalement bien",
@@ -46,7 +46,7 @@ public class MainActivity2 extends AppCompatActivity {
         adapterGestion.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerGestion.setAdapter(adapterGestion);
 
-        // 🔹 Bouton suivant
+        // Bouton suivant
         btnSuivant4.setOnClickListener(v -> {
             int scoreAct2 = 0;
 
@@ -70,14 +70,14 @@ public class MainActivity2 extends AppCompatActivity {
                 scoreAct2 += spinnerGestion.getSelectedItemPosition();
             }
 
-            //  Calcul score total jusqu'à présent
+            //  Calcul score total
             int totalScore = scoreAct1 + scoreAct2;
 
             //  Passer à l'activité suivante en transmettant le score
             Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
             intent.putExtra("score", totalScore);
 
-            //  Transmettre aussi les infos utilisateur si besoin
+            //  Transmettre aussi les infos utilisateur
             intent.putExtra("nom", getIntent().getStringExtra("nom"));
             intent.putExtra("prenom", getIntent().getStringExtra("prenom"));
             intent.putExtra("age", getIntent().getIntExtra("age", 0));

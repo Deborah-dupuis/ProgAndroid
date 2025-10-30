@@ -13,7 +13,6 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <!-- Logo -->
         <ImageView
             android:id="@+id/logoRelax"
             android:layout_width="120dp"
@@ -22,7 +21,6 @@
             android:src="@drawable/ic_relax_logo"
             android:contentDescription="Logo relaxation" />
 
-        <!-- Titre -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +30,6 @@
             android:textColor="#2E7D32"
             android:layout_marginBottom="20dp" />
 
-        <!-- Question 1 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,7 +67,6 @@
             android:tag="3"
             android:text="Rien, je continue à stresser 😅" />
 
-        <!-- Question 2 -->
         <TextView
             android:id="@+id/tvSeekbarQuestion"
             android:layout_width="wrap_content"
@@ -80,14 +76,12 @@
             android:textStyle="bold"
             android:layout_marginBottom="8dp" />
 
-        <!-- SeekBar -->
         <SeekBar
             android:id="@+id/seekRelax"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="10" />
 
-        <!-- Labels 0 / 5 / 10 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -120,7 +114,6 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- Valeur dynamique -->
         <TextView
             android:id="@+id/tvSeekValue"
             android:layout_width="wrap_content"
@@ -128,7 +121,6 @@
             android:text="Valeur : 0"
             android:layout_marginBottom="16dp" />
 
-        <!-- Question 3 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -137,9 +129,6 @@
             android:textStyle="bold"
             android:layout_marginBottom="8dp" />
 
-        <!-- ChipGroup bien visible -->
-
-        <!-- Question 4 -->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/chipGroupAmbiance"
@@ -227,17 +216,17 @@
                 android:text="Nuit blanche garantie 😬" />
         </RadioGroup>
 
-        <!-- Bouton suivant -->
         <Button
-            android:id="@+id/btnNext"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnSuivant5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Page suivante ➜"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#81C784"
             android:layout_marginTop="24dp"
-            android:padding="10dp"
-            android:layout_gravity="center" />
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#A5D6A7"
+            android:text="Suivant"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:elevation="2dp" />
 
     </LinearLayout>
 </ScrollView>

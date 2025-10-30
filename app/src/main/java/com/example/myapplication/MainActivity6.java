@@ -41,7 +41,6 @@ public class MainActivity6 extends AppCompatActivity {
 
         // Permettre à l’utilisateur de noter le questionnaire
         ratingBar.setOnRatingBarChangeListener((bar, rating, fromUser) -> {
-            // Ici tu peux enregistrer ou afficher la note
         });
     }
 }

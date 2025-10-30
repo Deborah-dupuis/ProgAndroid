@@ -1,15 +1,17 @@
 package com.example.myapplication;
 
-import com.google.android.material.chip.Chip;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.SeekBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.chip.Chip;
 
 public class MainActivity5 extends AppCompatActivity {
 
@@ -18,7 +20,7 @@ public class MainActivity5 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main5); // ton XML activité 5
+        setContentView(R.layout.activity_main5);
 
         // Récupération des données depuis activité 4
         Intent intent = getIntent();
@@ -44,7 +46,7 @@ public class MainActivity5 extends AppCompatActivity {
 
         RadioGroup rgSommeil = findViewById(R.id.rgSommeil);
 
-        Button btnNext = findViewById(R.id.btnNext);
+        Button btnNext = findViewById(R.id.btnSuivant5);
 
         // Gestion du clic sur le bouton "Page suivante"
         btnNext.setOnClickListener(v -> {

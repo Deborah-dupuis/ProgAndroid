@@ -13,7 +13,6 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <!-- Logo -->
         <ImageView
             android:id="@+id/logoImprevu"
             android:layout_width="100dp"
@@ -24,7 +23,6 @@
             android:contentDescription="Logo pierre"
             tools:ignore="HardcodedText" />
 
-        <!-- Titre -->
         <TextView
             android:id="@+id/tvTitle4"
             android:layout_width="wrap_content"
@@ -37,7 +35,6 @@
             android:gravity="center"
             tools:ignore="HardcodedText" />
 
-        <!-- Question 1 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,7 +84,6 @@
                 tools:ignore="HardcodedText" />
         </RadioGroup>
 
-        <!-- Question 2 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -100,7 +96,6 @@
             android:textStyle="bold"
             tools:ignore="HardcodedText,RtlHardcoded" />
 
-        <!-- Réponses à la verticale -->
         <RadioGroup
             android:id="@+id/rgPlanning"
             android:layout_width="match_parent"
@@ -140,7 +135,6 @@
                 tools:ignore="HardcodedText" />
         </RadioGroup>
 
-        <!-- Question 3 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -157,14 +151,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="3" />
-        <!-- Labels pour la SeekBar -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="4dp">
 
-            <!-- Chaque TextView a un poids de 1 pour partager l'espace équitablement -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -202,7 +195,6 @@
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
-        <!-- Question 4 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -214,9 +206,6 @@
             android:layout_marginBottom="8dp"
             tools:ignore="HardcodedText" />
 
-        <!-- Spinner à la place des étoiles -->
-
-        <!-- Bouton suivant -->
         <Spinner
             android:id="@+id/spinner2"
             android:layout_width="match_parent"

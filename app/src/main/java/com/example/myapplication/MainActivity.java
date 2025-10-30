@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Ton XML d’accueil
+        setContentView(R.layout.activity_main);
 
         // Récupération des éléments du layout
         EditText etNom = findViewById(R.id.etNom);
