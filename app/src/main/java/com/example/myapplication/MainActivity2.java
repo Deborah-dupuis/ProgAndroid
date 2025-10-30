@@ -10,7 +10,6 @@ public class MainActivity2 extends AppCompatActivity {
     private RadioGroup rgFrequence;
     private Spinner spinnerDeborde, spinnerGestion;
     private SeekBar seekTension;
-    private Button btnSuivant;
 
     private int scoreAct1; // score total reçu de l'activité 1
 
@@ -23,12 +22,32 @@ public class MainActivity2 extends AppCompatActivity {
         spinnerDeborde = findViewById(R.id.spinnerDeborde);
         seekTension = findViewById(R.id.seekTension);
         spinnerGestion = findViewById(R.id.spinnerGestion);
-        btnSuivant = findViewById(R.id.btnSuivant4);
+        Button btnSuivant4 = findViewById(R.id.btnSuivant4);
 
         //  Récupérer score et infos de l'activité 1
         scoreAct1 = getIntent().getIntExtra("score", 0);
 
-        btnSuivant.setOnClickListener(v -> {
+        // 🔹 Ajouter les choix au Spinner "Débordé"
+        String[] choixDeborde = {"Jamais", "Parfois", "Souvent", "Presque tous les jours"};
+        ArrayAdapter<String> adapterDeborde = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, choixDeborde);
+        adapterDeborde.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerDeborde.setAdapter(adapterDeborde);
+
+        // 🔹 Ajouter les choix au Spinner "Gestion du stress"
+        String[] choixGestion = {
+                "Excellente, je suis zen",
+                "Correcte, je m’en sors globalement bien",
+                "Moyenne, j’ai encore des difficultés",
+                "Mauvaise, je gère très mal"
+        };
+        ArrayAdapter<String> adapterGestion = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, choixGestion);
+        adapterGestion.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerGestion.setAdapter(adapterGestion);
+
+        // 🔹 Bouton suivant
+        btnSuivant4.setOnClickListener(v -> {
             int scoreAct2 = 0;
 
             //  RadioGroup fréquence
@@ -69,3 +88,5 @@ public class MainActivity2 extends AppCompatActivity {
         });
     }
 }
+
+
