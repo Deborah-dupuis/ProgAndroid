@@ -10,9 +10,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="283dp"
-        android:layout_height="194dp"
-        app:srcCompat="@drawable/Logo_soleil" />
+        android:layout_width="217dp"
+        android:layout_height="133dp"
+        app:srcCompat="@drawable/logo_soleil" />
 
     <TextView
         android:id="@+id/tvTitleResult"

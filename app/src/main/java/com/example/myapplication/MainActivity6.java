@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity6 extends AppCompatActivity {
@@ -26,19 +25,6 @@ public class MainActivity6 extends AppCompatActivity {
         String prenom = getIntent().getStringExtra("prenom");
 
         // Déterminer la catégorie selon le score
-        String resultText = getResultText(score);
-
-        // Afficher le message final avec prénom
-        tvResult.setText("Bravo " + prenom + " !" + resultText + "Score total : " + score);
-
-        // Permettre à l’utilisateur de noter le questionnaire
-        ratingBar.setOnRatingBarChangeListener((bar, rating, fromUser) -> {
-            // Ici tu peux enregistrer ou afficher la note
-        });
-    }
-
-    @NonNull
-    private static String getResultText(int score) {
         String resultText;
         if (score <= 5) {
             resultText = "🧘‍♀️ Zen ultime : Tout te glisse dessus, même les catastrophes.";
@@ -49,6 +35,13 @@ public class MainActivity6 extends AppCompatActivity {
         } else {
             resultText = "🌋 Stressé·e chronique : Tu es facilement submergé·e et explosif·ve sous pression.";
         }
-        return resultText;
+
+        // Afficher le message final avec prénom
+        tvResult.setText("Bravo " + prenom + " !" + resultText + "Score total : " + score);
+
+        // Permettre à l’utilisateur de noter le questionnaire
+        ratingBar.setOnRatingBarChangeListener((bar, rating, fromUser) -> {
+            // Ici tu peux enregistrer ou afficher la note
+        });
     }
 }

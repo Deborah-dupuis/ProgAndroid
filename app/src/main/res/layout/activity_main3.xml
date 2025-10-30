@@ -91,13 +91,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
             android:text="Si ton planning est chamboulé, tu :"
             android:textColor="#37474F"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="8dp"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText,RtlHardcoded" />
 
         <!-- Réponses à la verticale -->
         <RadioGroup
@@ -156,20 +157,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="3" />
-
+        <!-- Labels pour la SeekBar -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="space_between">
+            android:layout_marginTop="4dp">
 
-            <TextView android:text="Calme"
+            <!-- Chaque TextView a un poids de 1 pour partager l'espace équitablement -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Calme"
+                android:textColor="#37474F"
                 tools:ignore="HardcodedText" />
-            <TextView android:text="Trac"
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Trac"
+                android:textColor="#37474F"
                 tools:ignore="HardcodedText" />
-            <TextView android:text="Panique légère"
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Panique légère"
+                android:textColor="#37474F"
                 tools:ignore="HardcodedText" />
-            <TextView android:text="Panique totale"
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Panique totale"
+                android:textColor="#37474F"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
