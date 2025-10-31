@@ -126,35 +126,38 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Jamais"
-                android:verticalScrollbarPosition="right"
-                tools:ignore="HardcodedText" />
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="Jamais" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Parfois"
-                tools:ignore="HardcodedText" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Parfois" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Souvent"
-                tools:ignore="HardcodedText" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Souvent" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Presque tous les jours"
-                tools:ignore="HardcodedText" />
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Presque tous les jours" />
         </LinearLayout>
-
 
         <TextView
             android:layout_width="wrap_content"

@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.chip.Chip;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivity5 extends AppCompatActivity {
 
     private int scorePage5 = 0; // Score local de cette activité
@@ -22,7 +26,7 @@ public class MainActivity5 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
 
-        // Récupération des données depuis activité 4
+        // 🔹 Récupération des données depuis activité 4
         Intent intent = getIntent();
         int totalScore = intent.getIntExtra("score", 0);
         String nom = intent.getStringExtra("nom");
@@ -31,7 +35,7 @@ public class MainActivity5 extends AppCompatActivity {
         String genre = intent.getStringExtra("genre");
         boolean estStresse = intent.getBooleanExtra("stresse", false);
 
-        // Récupération des vues XML
+        // 🔹 Récupération des vues XML
         CheckBox cbMeditation = findViewById(R.id.cbMeditation);
         CheckBox cbMusique = findViewById(R.id.cbMusique);
         CheckBox cbChocolat = findViewById(R.id.cbChocolat);
@@ -48,7 +52,25 @@ public class MainActivity5 extends AppCompatActivity {
 
         Button btnNext = findViewById(R.id.btnSuivant5);
 
-        // Gestion du clic sur le bouton "Page suivante"
+        // 🔹 --- CHANGEMENT : gestion couleur des chips ---
+        List<Chip> chips = Arrays.asList(chipBain, chipMusique, chipNature, chipSilence);
+
+        for (Chip chip : chips) {
+            chip.setCheckable(true);
+            chip.setOnClickListener(v -> {
+                chip.setChecked(!chip.isChecked());
+                if (chip.isChecked()) {
+                    chip.setChipBackgroundColorResource(android.R.color.holo_green_light);
+                    chip.setTextColor(Color.WHITE);
+                } else {
+                    chip.setChipBackgroundColorResource(android.R.color.darker_gray);
+                    chip.setTextColor(Color.BLACK);
+                }
+            });
+        }
+        // 🔹 --- Fin gestion des chips ---
+
+        // 🔹 Gestion du clic sur le bouton "Page suivante"
         btnNext.setOnClickListener(v -> {
 
             // Vérification : au moins une CheckBox doit être cochée
@@ -69,7 +91,7 @@ public class MainActivity5 extends AppCompatActivity {
             // SeekBar : ajouter directement la valeur
             scorePage5 += seekRelax.getProgress();
 
-            // Chips : on peut attribuer 0 ou 1 point par chip coché
+            // Chips : 1 point par chip sélectionné
             if (chipBain.isChecked()) scorePage5 += 1;
             if (chipMusique.isChecked()) scorePage5 += 1;
             if (chipNature.isChecked()) scorePage5 += 1;
@@ -94,7 +116,7 @@ public class MainActivity5 extends AppCompatActivity {
         });
     }
 
-    // Méthode utilitaire pour récupérer la valeur d’un RadioGroup
+    // 🔹 Méthode utilitaire pour récupérer la valeur d’un RadioGroup
     private int getScoreFromRadioGroup(RadioGroup rg) {
         int selectedId = rg.getCheckedRadioButtonId();
         RadioButton selectedButton = findViewById(selectedId);
